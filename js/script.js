@@ -411,7 +411,7 @@ const creditCardValidation = event => {
     if(payment.value==="credit card"){ 
 
         //error message displayed when credit card number field left blank or is not in the format of a valid credit card number
-        if(ccNumber.value==='' || !(/(^\d{16}$|^\d{13}$)/.test(ccNumber.value))){
+        if(ccNumber.value==='' || !(/(^\d{13,16}$)/.test(ccNumber.value))){
             ccNumber.parentNode.insertBefore(ccNumberError, ccNumber.nextElementSibling);
             ccNumberError.style.display='';
             ccNumber.style.borderColor='red';
